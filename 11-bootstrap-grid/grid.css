@@ -1,0 +1,12 @@
+.container {
+    margin: auto;
+    padding: 0;
+    min-width: 100vw;
+}
+
+div {
+    background-color: blanchedalmond;
+    padding: 1rem;
+    text-align: center;
+    border: 1px solid #000;
+}
