@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Elementos de Interés de Bootstrap</title>
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <section class="section1">
+        <div class="bg-light p-5 rounded-3">
+          <div class="container-fluid py-5">
+            <h1 class="display-5 fw-bold">Custom jumbotron</h1>
+            <p class="fs-4 col-md-8">
+              Using a series of utilities, you can create this jumbotron, just
+              like the one in previous versions of Bootstrap. Check out the
+              examples below for how you can remix and restyle it to your
+              liking.
+            </p>
+            <button
+              type="button"
+              class="btn btn-primary btn-lg"
+              data-bs-toggle="modal"
+              data-bs-target="#modalEjercicio12"
+            >
+              Modal Button
+            </button>
+          </div>
+        </div>
+        <!-- Modal -->
+        <div
+          class="modal fade"
+          id="modalEjercicio12"
+          tabindex="-1"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+          data-bs-backdrop="static"
+        >
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">
+                  Modal title
+                </h1>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body py-5">
+                <a
+                  tabindex="0"
+                  class="btn btn-lg btn-outline-secondary"
+                  role="button"
+                  data-bs-toggle="popover"
+                  data-bs-trigger="focus"
+                  data-bs-title="Popover 12"
+                  data-bs-content="Popover text"
+                >
+                  Popover button
+                </a>
+                <p class="py-3">
+                  This is a
+                  <a
+                    href="#"
+                    data-bs-toggle="tooltip"
+                    data-bs-title="Default tooltip"
+                    data-bs-placement="bottom"
+                    >text</a
+                  >
+                  with a tooltip.
+                </p>
+              </div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  Close
+                </button>
+                <button type="button" class="btn btn-primary">
+                  Save changes
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section2">
+        <form class="py-4">
+          <div class="mb-3">
+            <label for="nombre" class="form-label">Nombre</label>
+            <input
+              type="text"
+              id="nombre"
+              placeholder="Ingrese su nombre"
+              class="form-control"
+            />
+            <p id="nameHelp" class="form-text">
+              El nombre completo como en el DNI.
+            </p>
+          </div>
+          <div class="mb-3">
+            <label for="telefono" class="form-label">Teléfono</label>
+            <input type="number" id="telefono" placeholder="+34 600 12 34 56" class="form-control">
+            <p id="telefonoHelp" class="form-text">El número con el prefijo incluido.</p>
+          </div>
+          <div class="mb-3">
+            <label for="comentarios" class="form-label">Comentarios</label>
+            <textarea name="comentario" id="comentarios" rows="5" class="form-control" placeholder="Añade aquí tus comentarios" style="resize: none;"></textarea>
+            <p id="comentarioHelp" class="form-text">
+                Máximo de 200 caracteres permitidos.
+            </p>
+          </div>
+          <button type="reset" class="btn btn-outline-secondary">Reset</button>
+          <button type="submit" class="btn btn-success">Submit</button>
+        </form>
+      </section>
+      <section class="section3 mb-5">
+        <div class="card" style="width: 20rem;">
+            <img src="https://images.pexels.com/photos/1381153/pexels-photo-1381153.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="imagen" class="card-img-top">
+            <!-- <div class="card-header"></div> -->
+            <div class="card-body">
+                <h5 class="card-title">Mariano Luna</h5>
+                <h6 class="card-subtitle text-muted mb-2">Lorem, ipsum dolor.</h6>
+                <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel nisi, quisquam recusandae aperiam similique a cumque excepturi! Esse non deleniti, ex ipsa nesciunt qui repellendus error, dicta quis tempora perspiciatis?</p>
+            </div>
+            <div class="card-footer pb-4">
+                <p class="card-text">Mi correo electrónico:</p>
+                <a href="#" class="card-link">marianorluna@gmail.com</a>
+            </div>
+        </div>
+      </section>
+    </div>
+  </body>
+  <!-- JavaScript Bundle with Popper -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+    crossorigin="anonymous"
+  ></script>
+  <script>
+    const popoverTriggerList = document.querySelectorAll(
+      '[data-bs-toggle="popover"]'
+    );
+    const popoverList = [...popoverTriggerList].map(
+      (popoverTriggerEl) => new bootstrap.Popover(popoverTriggerEl)
+    );
+    const tooltipTriggerList = document.querySelectorAll(
+      '[data-bs-toggle="tooltip"]'
+    );
+    const tooltipList = [...tooltipTriggerList].map(
+      (tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl)
+    );
+  </script>
+</html>
